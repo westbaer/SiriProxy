@@ -80,7 +80,13 @@ class SiriProxy::Connection < EventMachine::Connection
         puts "[Warning] 4S device connected. Keys will be saved."
         @faux = false
       elsif line.match(/iPad3,1;/)
-	puts "[Warning] iPad 3 device connected. Keys will be saved."
+	puts "[Warning] iPad 3 WiFi device connected. Keys will be saved."
+        @faux = false
+      elsif line.match(/iPad3,2;/)
+	puts "[Warning] iPad 3 CDMA device connected. Keys will be saved."
+        @faux = false
+      elsif line.match(/iPad3,3;/)
+	puts "[Warning] iPad 3 GSM device connected. Keys will be saved."
         @faux = false
       else
         puts "[Warning] Non-4S device connected."
